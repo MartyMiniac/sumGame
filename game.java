@@ -8,15 +8,18 @@ class game
 	}
 	public static void main(String args[])
 	{
+		th ob = new th();
 		Scanner in = new Scanner(System.in);
 		int a=(int)(Math.random()*101),b=(int)(Math.random()*101),c=0,d=0;
 		System.out.print(a+"+"+b+"=");
-		c=in.nextLine();
+		ob.start();
+		c=in.nextInt();
 		d=a+b;
 		if(c==d)
 			System.out.print("You Won !! You took "+((double)time/10.0)+" Secs");
 		else
 			System.out.print("You Lose !! For answering you took "+((double)time/10.0)+"\n But the correct answer is "+d);
+		ob.stop();
 	}
 }
 class th extends Thread
