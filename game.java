@@ -14,9 +14,9 @@ class game
 		c=in.nextLine();
 		d=a+b;
 		if(c==d)
-			System.out.print("You Won !! you took "+time+" Secs");
+			System.out.print("You Won !! You took "+((double)time/10.0)+" Secs");
 		else
-			System.out.print("You Lose !! The answer is "+d);
+			System.out.print("You Lose !! For answering you took "+((double)time/10.0)+"\n But the correct answer is "+d);
 	}
 }
 class th extends Thread
@@ -28,7 +28,7 @@ class th extends Thread
 		{
 			try
 			{
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			}
 			catch(Exception e){}
 			ob.time++;
