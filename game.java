@@ -1,6 +1,11 @@
 import java.util.*;
 class game
 {
+	static int time;
+	game()
+	{
+		time=0;
+	}
 	public static void main(String args[])
 	{
 		Scanner in = new Scanner(System.in);
@@ -9,8 +14,24 @@ class game
 		c=in.nextLine();
 		d=a+b;
 		if(c==d)
-			System.out.print("You Won !!");
+			System.out.print("You Won !! you took "+time+" Secs");
 		else
 			System.out.print("You Lose !! The answer is "+d);
+	}
+}
+class th extends Thread
+{
+	public void run()
+	{
+		game ob = new game();
+		while(true)
+		{
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch(Exception e){}
+			ob.time++;
+		}
 	}
 }
